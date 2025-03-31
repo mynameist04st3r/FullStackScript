@@ -34,4 +34,5 @@ sudo xcode-select --install
 ```bash
 npm install -g npm@11.2.0
 ```
-- [VSCode](https://code.visualstudio.com/download)
+- Install [VSCode](https://code.visualstudio.com/download)
+- Install [Docker](https://www.docker.com)
