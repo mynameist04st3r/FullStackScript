@@ -1,6 +1,6 @@
 # How to setup this script for your Mac.
 
-This script assumes that you're using the zsh in your Terminal and that you have Homebrew, npm, & VS Code installed on your system.  If these items are not yet installed, see "Install Necessary Apps" below.  This script will attempt to update Homebrew and npm prior to building your project, so if you don't have already have them installed it will give you errors.
+This script assumes that you're using the zsh in your Terminal and that you have Homebrew, npm, VS Code, & Docker installed on your system.  If these items are not yet installed, see "Install Necessary Apps" below.  This script will attempt to update Homebrew and npm prior to building your project, so if you don't have already have them installed it will give you errors.
 
 ## How to make this work:
 
