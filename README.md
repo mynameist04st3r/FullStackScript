@@ -1,6 +1,6 @@
 # How to setup this script for your Mac.
 
-This script assumes that you're using the zsh in your Terminal and that you have Homebrew, npm, & VS Code installed on your system.  If these items are not yet installed, utilize the links below.  This script will attempt to update Homebrew and npm prior to building your project, so if you don't have already have them installed it will give you errors.
+This script assumes that you're using the zsh in your Terminal and that you have Homebrew, npm, & VS Code installed on your system.  If these items are not yet installed, "Install Necessary Apps" below.  This script will attempt to update Homebrew and npm prior to building your project, so if you don't have already have them installed it will give you errors.
 
 ## How to make this work:
 
@@ -20,7 +20,13 @@ After it updates Homebrew and npm, it will ask you what you want your project to
 
 ### Install Necessary Apps
 
-- [Homebrew](https://brew.sh)
+In order for everything to work, there are some things that need to be installed first.  I recommend following this list in order below.
+
+- Install Command Line Tools for Xcode
+```bash
+sudo xcode-select --install
+```
+- Install [Homebrew](https://brew.sh)
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
