@@ -6,6 +6,7 @@ This script assumes that you're using the zsh in your Terminal and that you have
 
 1. Place the script in your home folder.
   - This is makes the assumption that when you open Terminal, that's where you are.  That being said, if your Terminal opens elsewhere, or you like navigating to your projects folder first, put this script where you'll most likely be when you want to use it.
+  - Another option would be to right click on the file and select "Get Info".  Once the info window opens, click on the pull down menu under "Open with:", click "Other…" at the bottom of the list, click on "Recommended Applications" and change it to "All Applications".  Then scroll down to "Utilities" in the Applications folder.  Then in the Utilities folder, scroll down to Terminal, select it and click "Add".  Then you can drag the script to your dock and just click on it to start the script and create a new full stack app.
 2. Open the script in either TextEdit or VS Code.
 3. Change the path to the directory where you keep all of your projects on lines 11, 12, & 18.
 4. Save and quit.
