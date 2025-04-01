@@ -21,7 +21,7 @@ mkdir server
 cd server
 npm init -y
 npm install knex --save
-npm i pg express nodemon
+npm i pg express nodemon cors
 npx knex init
 touch server.js
 echo "const port = 8000;
