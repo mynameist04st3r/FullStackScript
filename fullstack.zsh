@@ -15,31 +15,52 @@ while true; do
     echo "Project directory $name already exists. Please choose a different name."
   fi
 done
+
+open /Applications/Docker.app
+
 cd ~/SOFDevProjects/$name
 git init
 mkdir server
 cd server
 npm init -y
 npm install knex --save
-npm i pg express nodemon cors
+npm i pg express nodemon cors express-session uuid
+npm install @uswriting/bcrypt
+npm install @faker-js/faker
 npx knex init
-touch server.js
+mkdir src
+touch src/index.js
+touch src/auth.js
+mkdir images
 echo "const port = 8000;
 const express = require('express');
 const app = express();
 const knex = require('knex')(require('./knexfile.js')['development']);
 app.get('/', (req, res) => {
-  res.send('Here it is.');
+  res.send('Server Operational.');
 })
-app.get('/DATABASE_NAME', (req, res) => {
-  knex('DATABASE_NAME').select('*').then(DATABASE_HEADER => {
-    let VARIABLE = DATABASE_HEADER.map(DATABASE_NAME => DATABASE_NAME.DATABASE_HEADER)
+app.get('/$name', (req, res) => {
+  knex('$name').select('*').then(DATABASE_HEADER => {
+    let VARIABLE = DATABASE_HEADER.map($name => $name.DATABASE_HEADER)
     res.json(VARIABLE);
   })
 });
 app.listen(port, () => {
   console.log('Server running at http://localhost: ' + port);
-});" > server.js
+});" > index.js
+
+node -e '
+  const packageJson = require("./package.json");
+  const scripts = Object.keys(packageJson.scripts).map(key => ({ [key]: packageJson.scripts[key] }));
+  scripts.push({ start: "nodemon index.js" });
+  const index = scripts.findIndex(script => script.dev);
+  if (index >= 0) {
+    scripts.splice(index, 1);
+  }
+  packageJson.scripts = Object.assign({}, ...scripts);
+  const fs = require("fs");
+  fs.writeFileSync("package.json", JSON.stringify(packageJson, null, 2));
+'
 
 node -e '
   const knexfile = require("./knexfile");
@@ -49,7 +70,7 @@ node -e '
     password: "docker",
     user: "postgres",
     port: 5432,
-    database: "PUT DATABASE NAME HERE"
+    database: "'$name'"
   };
   let output = "module.exports = {\n";
   output += "  development: {\n";
@@ -95,6 +116,10 @@ node -e '
   output += "}\n";
   console.log(output);
 ' > temp.js && mv temp.js knexfile.js
+
+docker pull postgres
+mkdir -p $HOME/docker/volumes/postgres
+container_id=$(docker run --rm --name $name -e POSTGRES_PASSWORD=docker -dp 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres)
 
 cd ..
 npm create vite@latest client -- --template react -y
@@ -147,15 +172,30 @@ node -e '
   }
   fs.writeFileSync("vite.config.js", newConfig.join("\n"));
 '
-
-touch src/App.test.jsx
+mkdir fonts
+mkdir src/components
+mkdir src/styles
+mv src/App.css src/styles/App.css
+mv src/index.css src/styles/index.css
+touch tests/App.test.jsx
 
 npm install react-router-dom
 npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
 npm install --save chroma-js
+npm install axios
 
 cp .gitignore ../server/.gitignore
 
 cd ..
 
+mv client/README.md README.md
+
 code .
+
+# docker exec -it $name bash
+# psql -U postgres
+# CREATE DATABASE $name;
+
+# The above code doesn't work quite right. Will try the following code later:
+
+docker exec -it $name psql -U postgres -c "CREATE DATABASE $name;"

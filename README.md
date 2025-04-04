@@ -38,3 +38,34 @@ npm install -g npm@11.2.0
 ```
 - Install [VSCode](https://code.visualstudio.com/download)
 - Install [Docker](https://www.docker.com)
+
+### List of installed packages
+Listed below are all of the packages that are installed when you run this script to set up your project.  It's basically ready to go for just about any type of project that you would want to build (as far as I know, anyway. At the time of this writing, I've only been doing this for a couple of months).  Hopefully, you will find everything that you might need to build whatever you want.
+#### Server side
+npm
+knex
+pg
+nodemon
+express
+express-session
+cors
+uuid
+@uswriting/bcrypt
+@faker-js/faker
+
+#### Client side
+npm
+Vite React
+- react-router-dom
+Vitest
+- jsdom
+- @testing-library/react
+- @testing-library/jest-dom
+MUI
+- @mui/material
+- @mui/icons-material
+@emotion-js
+- @emotion/react
+- @emotion/styled
+chroma-js
+axios
