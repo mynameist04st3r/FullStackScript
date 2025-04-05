@@ -46,7 +46,7 @@ app.get('/$name', (req, res) => {
   })
 });
 app.listen(port, () => {
-  console.log('Server running at http://localhost: ' + port);
+  console.log('Server running at http://localhost:' + port);
 });" > index.js
 
 node -e '
@@ -80,7 +80,7 @@ node -e '
   output += "      user: \"postgres\",\n";
   output += "      password: \"docker\",\n";
   output += "      port: 5432,\n";
-  output += "      database: \"PUT DATABASE NAME HERE\"\n";
+  output += "      database: \"'$name'\"\n";
   output += "    }\n";
   output += "  },\n";
   output += "  staging: {\n";
