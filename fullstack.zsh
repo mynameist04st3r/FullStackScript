@@ -8,6 +8,8 @@ npm install -g npm-check-updates
 while true; do
   echo -n "Enter the project name: "
   read name
+
+  # CHANGE THE PATH ON LINES 13 AND 14 TO YOUR PROJECTS DIRECTORY.
   if [ ! -d ~/SOFDevProjects/$name ]; then
     mkdir ~/SOFDevProjects/$name
     break
@@ -18,6 +20,7 @@ done
 
 open /Applications/Docker.app
 
+# CHANGE THE PATH ON THE NEXT LINE TO YOUR PROJECTS DIRECTORY.
 cd ~/SOFDevProjects/$name
 git init
 mkdir server
