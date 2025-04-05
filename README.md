@@ -41,7 +41,7 @@ Each time you want to run the script, ensure that you're in your home folder and
 ```bash
 ./fullstack.zsh
 ```
-After it updates Homebrew and npm, it will ask you what you want your project to be called.  Type in whatever name you want to give it and press return.
+After it updates Homebrew and npm, it will ask you what you want your project to be called.  Type in whatever name you want to give it and press return. To avoid issues with naming conflicts, make your project name all _one word_, _lowercase_, _no special characters_.
 
 ### Install Necessary Apps
 
