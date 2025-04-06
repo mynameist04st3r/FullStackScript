@@ -3,7 +3,7 @@
 brew update
 brew upgrade
 
-npm install -g npm-check-updates
+npm update -g
 
 while true; do
   echo -n "Enter the project name: "

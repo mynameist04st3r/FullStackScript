@@ -41,7 +41,7 @@ Each time you want to run the script, ensure that you're in your home folder and
 ```bash
 ./fullstack.zsh
 ```
-After it updates Homebrew and npm, it will ask you what you want your project to be called.  Type in whatever name you want to give it and press return. To avoid issues with naming conflicts, make your project name all _one word_, _lowercase_, _no special characters_.
+After it updates Homebrew and npm, it will ask you what you want your project to be called.  Type in whatever name you want to give it and press return. To avoid issues with naming conflicts, make your project name all **one word**, **lowercase**, **no special characters**.
 
 ### Install Necessary Apps
 
@@ -54,6 +54,10 @@ sudo xcode-select --install
 - Install [Homebrew](https://brew.sh)
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+- Install nvm (use [this link](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) to make sure you get the latest version, the version in the code below is current as of this writing):
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
 ```
 - Install npm:
 ```bash
