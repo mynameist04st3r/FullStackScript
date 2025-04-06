@@ -195,10 +195,4 @@ mv client/README.md README.md
 
 code .
 
-# docker exec -it $name bash
-# psql -U postgres
-# CREATE DATABASE $name;
-
-# The above code doesn't work quite right. Will try the following code later:
-
 docker exec -it $name psql -U postgres -c "CREATE DATABASE $name;"
