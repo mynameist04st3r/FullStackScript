@@ -27,13 +27,14 @@ mkdir server
 cd server
 npm init -y
 npm install knex --save
-npm i pg express nodemon cors express-session uuid
+npm i pg express nodemon cors express-session uuid dotenv
 npm install @uswriting/bcrypt
 npm install @faker-js/faker
 npx knex init
 mkdir src
 touch src/index.js
-touch src/auth.js
+mkdir routes
+touch routes/auth.js
 mkdir images
 echo "const port = 8000;
 const express = require('express');
@@ -50,7 +51,7 @@ app.get('/$name', (req, res) => {
 });
 app.listen(port, () => {
   console.log('Server running at http://localhost:' + port);
-});" > index.js
+});" > src/index.js
 
 node -e '
   const packageJson = require("./package.json");
@@ -185,7 +186,7 @@ touch tests/App.test.jsx
 npm install react-router-dom
 npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
 npm install --save chroma-js
-npm install axios
+npm install axios ngx-drag-drop
 
 cp .gitignore ../server/.gitignore
 
