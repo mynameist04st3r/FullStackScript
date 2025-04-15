@@ -10,7 +10,11 @@ This script assumes that you're using the zsh in your Terminal and that you have
 2. Open the script in either TextEdit, VS Code, or Xcode.
 3. Change the path to the directory where you keep all of your projects on lines <u>**13**</u>, <u>**14**</u>, & <u>**24**</u>.
 4. Save and quit.
-5. Make sure that you have deleted all Postgresql tables and images and close Docker.
+5. Enter the following into your terminal to make the script executable (make sure that fullstack.zsh is in your current working directory):
+```bash
+chmod +x fullstack.zsh
+```
+6. Make sure that you have deleted all Postgresql tables and images and close Docker.
 - Open your terminal and enter the following:
 ```bash
 docker ps -a
@@ -76,6 +80,7 @@ Listed below are all of the packages that are installed when you run this script
 - express
 - express-session
 - cors
+- dotenv
 - uuid
 - @uswriting/bcrypt
 - @faker-js/faker
@@ -83,7 +88,11 @@ Listed below are all of the packages that are installed when you run this script
 #### Client side
 - npm
 - Vite React
+  - react
+  - react-dom
   - react-router-dom
+  - react-dnd
+  - react-dnd-html5-backend
 - Vitest
   - jsdom
   - @testing-library/react
