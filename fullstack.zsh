@@ -186,7 +186,7 @@ touch tests/App.test.jsx
 npm install react-router-dom
 npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
 npm install --save chroma-js
-npm install axios ngx-drag-drop
+npm install axios react-dnd react-dnd-html5-backend
 
 cp .gitignore ../server/.gitignore
 
